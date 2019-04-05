@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@page isELIgnored="false"%>
 <html>
     <link href='https://fonts.googleapis.com/css?family=Arima Madurai' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
@@ -28,28 +29,28 @@
         <h1>Manage Grocery Items</h1>
     </center>
     <div align="center">
-        <c:if test="${grocery != null}">
+        <c:if test="${not empty grocery}">
             <form action="update" method="POST">
         </c:if>
-        <c:if test="${grocery == null}">
+        <c:if test="${empty grocery}">
             <form action="insert" method="POST">
         </c:if>
             <caption>
-                <h2>
-                    <c:if test="${grocery != null">
+               <h2>
+                    <c:if test="${not empty grocery}">
                         Edit Item
                     </c:if>
-                    <c:if test="${grocery == null}">
+                    <c:if test="${empty grocery}">
                         Add New Grocery Item
                     </c:if>
                 </h2>
             </caption>
-                <c:if test="${grocery != null">
+                <c:if test="${not empty grocery}">
                     <input type="hidden" name="id" value="<c:out value='${grocery.id}' />" />
                 </c:if>
-        Food item: <input type="text" name="item" value="<c:out value='${grocery.item}' />" />
+        Food item: <input type="text" name="item" />
         <br/><br/>
-        Amount: <input type="text" name="amount" value="<c:out value='${grocery.amount}' />" />
+        Amount: <input type="text" name="amount" />
         <br/><br/>
         Do you have a coupon?
         <br/><br/>

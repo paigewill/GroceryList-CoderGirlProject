@@ -21,6 +21,10 @@ public class Grocery {
     public Grocery(int id, String item, String amount, String isle, boolean hasCoupon, boolean onSale) {
         this.item = item;
         this.id = id;
+        this.amount = amount;
+        this.isle = isle;
+        this.hasCoupon = hasCoupon;
+        this.onSale = onSale;
     }
 
     public Grocery(String item, String amount, String isle, boolean hasCoupon, boolean onSale) {
@@ -63,7 +67,7 @@ public class Grocery {
         this.isle = isle;
     }
 
-    public boolean hasCoupon() {
+    public boolean getHasCoupon() {
         return hasCoupon;
     }
 
@@ -71,7 +75,7 @@ public class Grocery {
         this.hasCoupon = hasCoupon;
     }
 
-    public boolean isOnSale() {
+    public boolean getOnSale() {
         return onSale;
     }
 

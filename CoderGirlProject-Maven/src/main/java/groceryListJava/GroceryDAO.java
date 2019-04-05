@@ -48,8 +48,8 @@ public class GroceryDAO {
         statement.setString(1, grocery.getItem());
         statement.setString(2, grocery.getAmount());
         statement.setString(3, grocery.getIsle());
-        statement.setBoolean(4, grocery.hasCoupon());
-        statement.setBoolean(5, grocery.isOnSale());
+        statement.setBoolean(4, grocery.getHasCoupon());
+        statement.setBoolean(5, grocery.getOnSale());
 
         boolean rowInserted = statement.executeUpdate() > 0;
         statement.close();
@@ -74,7 +74,7 @@ public class GroceryDAO {
             String isle = resultSet.getString("isle");
             boolean hasCoupon = resultSet.getBoolean("hasCoupon");
             boolean onSale = resultSet.getBoolean("onSale");
-
+            System.out.println(resultSet);
             Grocery grocery = new Grocery(id, item, amount, isle, hasCoupon, onSale);
             groceryList.add(grocery);
         }
@@ -111,8 +111,8 @@ public class GroceryDAO {
         statement.setString(1, grocery.getItem());
         statement.setString(2, grocery.getAmount());
         statement.setString(3, grocery.getIsle());
-        statement.setBoolean(4, grocery.hasCoupon());
-        statement.setBoolean(5, grocery.isOnSale());
+        statement.setBoolean(4, grocery.getHasCoupon());
+        statement.setBoolean(5, grocery.getOnSale());
         statement.setInt(6, grocery.getId());
 
         boolean rowUpdated = statement.executeUpdate() > 0;

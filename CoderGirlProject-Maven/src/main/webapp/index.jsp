@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ page isELIgnored="false"%>
 <%@ page import="java.util.*"%>
 <%@ page import="java.awt.List"%>
 <%@ page import="java.groceryListJava.*"%>
@@ -48,7 +49,6 @@
             <table border="1" cellpadding="5">
                 <caption><h2>Grocery List</h2></caption>
                 <tr>
-                    <th></th>
                     <th>Item</th>
                     <th>Amount</th>
                     <th>Isle</th>
@@ -57,7 +57,6 @@
                 </tr>
                 <c:forEach var="grocery" items="${groceryList}" >
                     <tr>
-                        <td><c:out value="${grocery.id}" /></td>
                         <td><c:out value="${grocery.item}" /></td>
                         <td><c:out value="${grocery.amount}" /></td>
                         <td><c:out value="${grocery.isle}" /></td>

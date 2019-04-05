@@ -14,6 +14,7 @@ public class GroceryServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private GroceryDAO groceryDAO;
 
+
     public void init() {
         String jdbcURL = getServletContext().getInitParameter("jdbcURL");
         String jdbcUsername = getServletContext().getInitParameter("jdbcUsername");
@@ -26,13 +27,11 @@ public class GroceryServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         doGet(request, response);
-        System.out.println("I am posting.");
     }
 
     @Override //send data - operations that change data
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws IOException, ServletException {
-        System.out.println("I am getting.");
         String action = request.getServletPath();
         try {
             switch (action) {
@@ -67,7 +66,7 @@ public class GroceryServlet extends HttpServlet {
         request.setAttribute("groceryList", groceryList);
         RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
         dispatcher.forward(request, response);
-        System.out.println(groceryList);
+        System.out.println("Servlet: " + groceryList);
     }
 
     private void showNewForm(HttpServletRequest request, HttpServletResponse response)
