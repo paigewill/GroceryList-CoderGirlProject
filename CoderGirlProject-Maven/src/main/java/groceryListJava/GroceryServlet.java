@@ -14,11 +14,10 @@ public class GroceryServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private GroceryDAO groceryDAO;
 
-
     public void init() {
-        String jdbcURL = getServletContext().getInitParameter("jdbcURL");
-        String jdbcUsername = getServletContext().getInitParameter("jdbcUsername");
-        String jdbcPassword = getServletContext().getInitParameter("jdbcPassword");
+        String jdbcURL = System.getenv("jdbcURL");
+        String jdbcUsername = System.getenv("jdbcUsername");
+        String jdbcPassword = System.getenv("jdbcPassword");
 
         groceryDAO = new GroceryDAO(jdbcURL, jdbcUsername, jdbcPassword);
     }
