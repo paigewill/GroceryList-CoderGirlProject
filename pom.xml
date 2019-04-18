@@ -111,9 +111,9 @@
                   </execution>
               </executions>
           </plugin>
-      </plugins>
+      <!--</plugins>-->
     <!--</pluginManagement>-->
-      <plugins>
+      <!--<plugins>-->
           <!-- https://mvnrepository.com/artifact/org.apache.tomcat.maven/tomcat7-maven-plugin -->
           <plugin>
       <groupId>org.apache.tomcat.maven</groupId>
