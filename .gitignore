@@ -2,3 +2,5 @@ CoderGirlProject-Maven/target/
 CoderGirlProject-Maven/.idea/
 **/.idea
 target
+.idea
+*.iml

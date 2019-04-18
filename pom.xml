@@ -60,7 +60,7 @@
 
   <build>
     <finalName>CoderGirlProject</finalName>
-    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+    <!--<pluginManagement>&lt;!&ndash; lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) &ndash;&gt;-->
       <plugins>
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
@@ -112,7 +112,7 @@
               </executions>
           </plugin>
       </plugins>
-    </pluginManagement>
+    <!--</pluginManagement>-->
       <plugins>
           <!-- https://mvnrepository.com/artifact/org.apache.tomcat.maven/tomcat7-maven-plugin -->
           <plugin>
